@@ -45,6 +45,45 @@ export class NameComponent {}
 - Use `@shared/services/...` for shared services
 - Use `@shared/ui/...` for shared UI components
 
+### Tailwind CSS v4
+- SCSS files using `@apply` MUST start with `@reference "tailwindcss"`
+- PostCSS config: `.postcssrc.json` (NOT `postcss.config.js`)
+- Builder: `application` (esbuild) in angular.json
+- Import in global styles: `@import "tailwindcss"`
+
+### Component Creation Workflow
+1. Define model in `projects/shared/src/lib/models/`
+2. Create mock data in `projects/catalog/src/assets/data/`
+3. Create service in `projects/shared/src/lib/services/`
+4. Create component with HTML + SCSS separation
+5. Add lazy route in app routes
+6. Export in `public-api.ts` if shared
+7. Verify: `ng build catalog && ng build admin`
+
+### Build Verification (Pre-Commit)
+- [ ] `ng build catalog` succeeds
+- [ ] `ng build admin` succeeds
+- [ ] No TypeScript errors
+- [ ] SCSS files with @apply have @reference
+
+### Shared Library Structure
+- `projects/shared/src/lib/models/` - Data models
+- `projects/shared/src/lib/services/` - Abstract services
+- `projects/shared/src/lib/ui/components/` - Reusable UI
+- `projects/shared/src/public-api.ts` - Public exports
+
+### Directory Structure
+```
+projects/{app}/src/app/
+├── features/
+│   └── {feature}/
+│       ├── components/    # Feature-specific components
+│       └── pages/         # Route components
+├── shared/
+│   └── components/        # App-shared components
+└── app.routes.ts          # Lazy routes
+```
+
 ## Build Commands
 ```bash
 # Install dependencies

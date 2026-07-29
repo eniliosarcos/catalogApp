@@ -28,6 +28,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Added `@reference "tailwindcss"` to all 16 SCSS files using `@apply`
   - Confirmed `application` builder (esbuild) has built-in Tailwind v4 support
 
+### Changed
+- Enhanced AGENTS.md with development guidelines:
+  - Tailwind CSS v4 rules and @reference requirement
+  - Component creation workflow (7-step process)
+  - Pre-commit build verification checklist
+  - Shared library structure documentation
+  - Directory structure conventions
+
 ### Architecture Decisions
 - ADR-001: Angular 19 as framework
 - ADR-002: Monorepo with Angular CLI workspaces
