@@ -54,7 +54,7 @@
               }
             ],
             "styles": [
-              "projects/catalog/src/styles.scss"
+              "projects/catalog/src/styles.css"
             ],
             "scripts": []
           },
@@ -113,7 +113,7 @@
               }
             ],
             "styles": [
-              "projects/catalog/src/styles.scss"
+              "projects/catalog/src/styles.css"
             ],
             "scripts": []
           }
@@ -171,7 +171,7 @@
               }
             ],
             "styles": [
-              "projects/admin/src/styles.scss"
+              "projects/admin/src/styles.css"
             ],
             "scripts": []
           },
@@ -230,7 +230,7 @@
               }
             ],
             "styles": [
-              "projects/admin/src/styles.scss"
+              "projects/admin/src/styles.css"
             ],
             "scripts": []
           }
@@ -270,5 +270,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "f9cf47a4-3ca2-4f7b-b7d9-b6e3decfe315"
   }
 }

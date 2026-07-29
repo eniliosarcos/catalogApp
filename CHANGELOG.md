@@ -22,12 +22,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Responsive design
 - All components converted to separate HTML and SCSS files
 
+### Fixed
+- Tailwind CSS v4 utilities not generating in Angular 19
+  - Replaced `postcss.config.js` with `.postcssrc.json` (Angular 19 format)
+  - Added `@reference "tailwindcss"` to all 16 SCSS files using `@apply`
+  - Confirmed `application` builder (esbuild) has built-in Tailwind v4 support
+
 ### Architecture Decisions
 - ADR-001: Angular 19 as framework
 - ADR-002: Monorepo with Angular CLI workspaces
 - ADR-003: Tailwind CSS + Lucide for styling
 - ADR-004: Cart with localStorage and alphanumeric code
 - ADR-005: Node.js + MongoDB as future backend
+- ADR-006: Tailwind v4 + Angular 19 integration details
 
 ## [0.1.0] - 2026-07-29
 
