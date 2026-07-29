@@ -84,6 +84,35 @@ projects/{app}/src/app/
 └── app.routes.ts          # Lazy routes
 ```
 
+### Testing Guidelines
+- Services: test all public methods
+- Components: test rendering with mock data
+- Cart: test localStorage persistence
+- Run: `ng test catalog` before commit
+- Tests are in `.spec.ts` files next to source
+
+### Error Handling
+- Services return Observable on failure
+- Components use `@if` to show error state
+- Use `ErrorDisplayComponent` for consistent error UI
+- Never silently swallow errors
+- localStorage errors: fallback to in-memory
+
+### Accessibility (a11y)
+- Use `sr-only` for screen reader text
+- Use `focus:ring` for keyboard navigation
+- Use `aria-label` for icon-only buttons
+- Use semantic HTML (nav, main, section, article)
+- Use `role` attributes where needed
+- Images must have alt text
+
+### Performance
+- Use OnPush change detection (default is Default)
+- Always use `trackBy` with `@for`
+- Use `signal()` for reactive state
+- Lazy load routes (already done)
+- Use `@defer` for non-critical components
+
 ## Build Commands
 ```bash
 # Install dependencies

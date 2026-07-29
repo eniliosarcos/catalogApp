@@ -21,6 +21,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Loading states and empty states
 - Responsive design
 - All components converted to separate HTML and SCSS files
+- Unit tests for cart, product, and category services
+- Component tests for cart-view and product-detail
+- ErrorState model for typed error handling
+- ErrorDisplayComponent for consistent error UI
 
 ### Fixed
 - Tailwind CSS v4 utilities not generating in Angular 19
@@ -35,6 +39,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Pre-commit build verification checklist
   - Shared library structure documentation
   - Directory structure conventions
+  - Testing guidelines
+  - Error handling patterns
+  - Accessibility (a11y) rules
+  - Performance guidelines
+- Enabled test generation in angular.json schematics
 
 ### Architecture Decisions
 - ADR-001: Angular 19 as framework
