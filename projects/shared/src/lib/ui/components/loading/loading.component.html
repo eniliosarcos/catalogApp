@@ -1,0 +1,8 @@
+<div class="flex items-center justify-center" [class]="containerClass">
+  <div class="animate-spin rounded-full border-4 border-gray-200 border-t-blue-600" 
+       [class]="sizeClass">
+  </div>
+  @if (message) {
+    <span class="ml-3 text-gray-600">{{ message }}</span>
+  }
+</div>

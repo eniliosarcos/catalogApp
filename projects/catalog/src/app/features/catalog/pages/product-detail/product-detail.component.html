@@ -1,0 +1,118 @@
+<div class="min-h-screen bg-gray-50">
+  <div class="container mx-auto px-4 py-8">
+    <!-- Breadcrumbs -->
+    <app-breadcrumbs [items]="breadcrumbItems"></app-breadcrumbs>
+
+    @if (loading) {
+      <shared-loading message="Cargando producto..."></shared-loading>
+    } @else if (product) {
+      <div class="bg-white rounded-xl shadow-md overflow-hidden">
+        <div class="grid md:grid-cols-2 gap-8 p-6">
+          <!-- Gallery -->
+          <app-product-gallery [images]="product.images"></app-product-gallery>
+
+          <!-- Product Info -->
+          <div class="product-info">
+            <h1 class="text-3xl font-bold text-gray-800 mb-4">{{ product.name }}</h1>
+            
+            <!-- Price -->
+            <div class="price-section mb-6">
+              @if (product.discountPrice) {
+                <div class="flex items-center gap-3">
+                  <span class="text-3xl font-bold text-green-600">
+                    {{ product.discountPrice | currency }}
+                  </span>
+                  <span class="text-xl text-gray-500 line-through">
+                    {{ product.price | currency }}
+                  </span>
+                  <span class="discount-badge bg-red-500 text-white px-3 py-1 text-sm font-semibold rounded">
+                    -{{ getDiscountPercentage() }}%
+                  </span>
+                </div>
+              } @else {
+                <span class="text-3xl font-bold text-gray-800">
+                  {{ product.price | currency }}
+                </span>
+              }
+            </div>
+
+            <!-- Stock -->
+            <div class="stock-status mb-6">
+              @if (product.stock > 10) {
+                <span class="text-green-600 flex items-center gap-2">
+                  <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                  En stock ({{ product.stock }} unidades)
+                </span>
+              } @else if (product.stock > 0) {
+                <span class="text-orange-600 flex items-center gap-2">
+                  <span class="w-2 h-2 bg-orange-500 rounded-full"></span>
+                  ¡Últimas {{ product.stock }} unidades!
+                </span>
+              } @else {
+                <span class="text-red-600 flex items-center gap-2">
+                  <span class="w-2 h-2 bg-red-500 rounded-full"></span>
+                  Agotado
+                </span>
+              }
+            </div>
+
+            <!-- Description -->
+            <div class="description mb-6">
+              <h2 class="text-lg font-semibold text-gray-800 mb-2">Descripción</h2>
+              <p class="text-gray-600 leading-relaxed">{{ product.description }}</p>
+            </div>
+
+            <!-- Tags -->
+            @if (product.tags.length > 0) {
+              <div class="tags mb-6">
+                <div class="flex flex-wrap gap-2">
+                  @for (tag of product.tags; track tag) {
+                    <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
+                      {{ tag }}
+                    </span>
+                  }
+                </div>
+              </div>
+            }
+
+            <!-- Add to Cart -->
+            <div class="add-to-cart mt-auto">
+              @if (product.stock > 0) {
+                <div class="flex items-center gap-4 mb-4">
+                  <label class="text-gray-700 font-medium">Cantidad:</label>
+                  <input type="number" 
+                         [(ngModel)]="quantity" 
+                         min="1" 
+                         [max]="product.stock"
+                         class="w-20 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <button (click)="addToCart()" 
+                        class="w-full bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                  Agregar al carrito
+                </button>
+                @if (addedToCart) {
+                  <p class="text-green-600 text-sm mt-2 text-center">¡Agregado al carrito!</p>
+                }
+              } @else {
+                <button disabled 
+                        class="w-full bg-gray-300 text-gray-500 py-3 px-6 rounded-lg font-semibold cursor-not-allowed">
+                  Agotado
+                </button>
+              }
+            </div>
+
+            <!-- SKU -->
+            <p class="text-sm text-gray-500 mt-4">SKU: {{ product.sku }}</p>
+          </div>
+        </div>
+      </div>
+    } @else {
+      <div class="text-center py-16">
+        <p class="text-gray-500 text-lg">Producto no encontrado</p>
+        <a routerLink="/" class="mt-4 inline-block text-blue-600 hover:underline">
+          ← Volver al inicio
+        </a>
+      </div>
+    }
+  </div>
+</div>

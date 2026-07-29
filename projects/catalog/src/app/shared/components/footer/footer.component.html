@@ -1,0 +1,48 @@
+<footer class="bg-gray-800 text-white py-12 mt-auto">
+  <div class="container mx-auto px-4">
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Brand -->
+      <div>
+        <div class="flex items-center gap-2 mb-4">
+          <span class="text-2xl">🛍️</span>
+          <span class="text-xl font-bold">Catálogo</span>
+        </div>
+        <p class="text-gray-400 text-sm">
+          Tu tienda de confianza con los mejores productos y precios.
+        </p>
+      </div>
+
+      <!-- Links -->
+      <div>
+        <h3 class="font-semibold mb-4">Enlaces</h3>
+        <ul class="space-y-2 text-gray-400">
+          <li><a routerLink="/" class="hover:text-white transition-colors">Inicio</a></li>
+          <li><a routerLink="/cart" class="hover:text-white transition-colors">Carrito</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h3 class="font-semibold mb-4">Contacto</h3>
+        <ul class="space-y-2 text-gray-400">
+          <li class="flex items-center gap-2">
+            <span>📱</span>
+            <span>WhatsApp: +52 123 456 7890</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <span>📸</span>
+            <span>Instagram: &#64;catalogo</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <span>✈️</span>
+            <span>Telegram: &#64;catalogo</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm">
+      <p>© {{ currentYear }} Catálogo. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,39 @@
+<div class="min-h-screen bg-gray-50">
+  <div class="container mx-auto px-4 py-8">
+    <!-- Breadcrumbs -->
+    <app-breadcrumbs [items]="breadcrumbItems"></app-breadcrumbs>
+
+    <h1 class="text-3xl font-bold text-gray-800 mb-8">Mi Carrito</h1>
+
+    @if (loading) {
+      <shared-loading message="Cargando carrito..."></shared-loading>
+    } @else if (cart && cart.items.length > 0) {
+      <div class="grid lg:grid-cols-3 gap-8">
+        <!-- Cart Items -->
+        <div class="lg:col-span-2 space-y-4">
+          @for (item of cart.items; track item.productId) {
+            <app-cart-item [item]="item" 
+                          (remove)="removeItem($event)"
+                          (updateQuantity)="updateQuantity($event.productId, $event.quantity)">
+            </app-cart-item>
+          }
+        </div>
+
+        <!-- Cart Summary -->
+        <div class="lg:col-span-1">
+          <app-cart-summary [cart]="cart"></app-cart-summary>
+        </div>
+      </div>
+    } @else {
+      <div class="empty-cart text-center py-16 bg-white rounded-xl shadow-md">
+        <span class="text-6xl mb-4 block">🛒</span>
+        <h2 class="text-2xl font-bold text-gray-800 mb-2">Tu carrito está vacío</h2>
+        <p class="text-gray-600 mb-6">¡Explora nuestro catálogo y encuentra algo que te guste!</p>
+        <a routerLink="/" 
+           class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+          Ver catálogo
+        </a>
+      </div>
+    }
+  </div>
+</div>

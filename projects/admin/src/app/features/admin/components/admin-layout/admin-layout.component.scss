@@ -1,0 +1,11 @@
+:host {
+  display: block;
+}
+
+.admin-layout {
+  @apply flex min-h-screen bg-gray-100;
+}
+
+.main-content {
+  @apply flex-1 p-8;
+}

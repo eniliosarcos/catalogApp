@@ -1,0 +1,29 @@
+<div class="space-y-4">
+  <!-- Main Image -->
+  <div class="main-image aspect-square bg-gray-100 rounded-lg overflow-hidden">
+    @if (images.length > 0) {
+      <img [src]="selectedImage?.url || getPrimaryImage()?.url" 
+           [alt]="selectedImage?.alt || getPrimaryImage()?.alt"
+           class="w-full h-full object-cover">
+    } @else {
+      <div class="w-full h-full flex items-center justify-center text-gray-400">
+        <span class="text-6xl">📷</span>
+      </div>
+    }
+  </div>
+
+  <!-- Thumbnails -->
+  @if (images.length > 1) {
+    <div class="flex gap-2 overflow-x-auto pb-2">
+      @for (image of images; track image.id) {
+        <button (click)="selectImage(image)"
+                [class]="image.id === selectedImage?.id ? 'ring-2 ring-blue-500' : ''"
+                class="thumbnail flex-shrink-0 w-20 h-20 bg-gray-100 rounded-lg overflow-hidden hover:opacity-80 transition-opacity">
+          <img [src]="image.url" 
+               [alt]="image.alt"
+               class="w-full h-full object-cover">
+        </button>
+      }
+    </div>
+  }
+</div>

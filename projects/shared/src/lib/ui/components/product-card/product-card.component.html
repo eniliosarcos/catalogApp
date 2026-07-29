@@ -1,0 +1,36 @@
+<a [routerLink]="['/product', product.slug]" 
+   class="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+  <div class="aspect-square bg-gray-200 relative">
+    @if (product.images.length > 0) {
+      <img [src]="getPrimaryImage()" 
+           [alt]="product.name"
+           class="w-full h-full object-cover">
+    } @else {
+      <div class="w-full h-full flex items-center justify-center text-gray-400">
+        <span class="text-4xl">📷</span>
+      </div>
+    }
+    @if (product.discountPrice) {
+      <span class="discount-badge absolute top-2 right-2 bg-red-500 text-white px-2 py-1 text-sm font-semibold rounded">
+        -{{ getDiscountPercentage() }}%
+      </span>
+    }
+  </div>
+  <div class="p-4">
+    <h3 class="font-semibold text-lg text-gray-800 mb-2 line-clamp-2">{{ product.name }}</h3>
+    <div class="flex items-center gap-2">
+      @if (product.discountPrice) {
+        <span class="text-xl font-bold text-green-600">{{ product.discountPrice | currency }}</span>
+        <span class="text-sm text-gray-500 line-through">{{ product.price | currency }}</span>
+      } @else {
+        <span class="text-xl font-bold text-gray-800">{{ product.price | currency }}</span>
+      }
+    </div>
+    @if (product.stock <= 5 && product.stock > 0) {
+      <p class="text-sm text-orange-600 mt-2">¡Últimas {{ product.stock }} unidades!</p>
+    }
+    @if (product.stock === 0) {
+      <p class="text-sm text-red-600 mt-2">Agotado</p>
+    }
+  </div>
+</a>

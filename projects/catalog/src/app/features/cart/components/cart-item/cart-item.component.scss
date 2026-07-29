@@ -1,0 +1,11 @@
+:host {
+  display: block;
+}
+
+.quantity-controls {
+  @apply flex items-center border border-gray-300 rounded-lg;
+}
+
+.remove-btn {
+  @apply text-red-500 hover:text-red-700 transition-colors text-sm;
+}

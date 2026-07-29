@@ -1,0 +1,31 @@
+:host {
+  display: block;
+}
+
+.product-info {
+  @apply flex flex-col;
+}
+
+.price-section {
+  @apply mb-6;
+}
+
+.discount-badge {
+  @apply bg-red-500 text-white px-3 py-1 text-sm font-semibold rounded;
+}
+
+.stock-status {
+  @apply mb-6;
+}
+
+.description {
+  @apply mb-6;
+}
+
+.tags {
+  @apply mb-6;
+}
+
+.add-to-cart {
+  @apply mt-auto;
+}

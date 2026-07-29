@@ -1,0 +1,7 @@
+:host {
+  display: block;
+}
+
+.category-card {
+  @apply bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1;
+}

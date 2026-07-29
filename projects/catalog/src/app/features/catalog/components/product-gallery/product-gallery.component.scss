@@ -1,0 +1,15 @@
+:host {
+  display: block;
+}
+
+.main-image {
+  @apply aspect-square bg-gray-100 rounded-lg overflow-hidden;
+}
+
+.thumbnail {
+  @apply flex-shrink-0 w-20 h-20 bg-gray-100 rounded-lg overflow-hidden hover:opacity-80 transition-opacity;
+}
+
+.thumbnail.active {
+  @apply ring-2 ring-blue-500;
+}

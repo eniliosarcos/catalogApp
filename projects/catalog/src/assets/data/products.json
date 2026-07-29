@@ -1,0 +1,278 @@
+[
+  {
+    "id": "1",
+    "name": "iPhone 15 Pro Max",
+    "slug": "iphone-15-pro-max",
+    "description": "El iPhone más avanzado con chip A17 Pro, cámara de 48MP y diseño de titanio. Pantalla Super Retina XDR de 6.7 pulgadas.",
+    "price": 24999,
+    "discountPrice": 22999,
+    "stock": 15,
+    "sku": "IPH15PM-256",
+    "categoryId": "1",
+    "images": [
+      {
+        "id": "1",
+        "url": "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=600",
+        "alt": "iPhone 15 Pro Max frente",
+        "isPrimary": true,
+        "order": 1
+      },
+      {
+        "id": "2",
+        "url": "https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?w=600",
+        "alt": "iPhone 15 Pro Max detrás",
+        "isPrimary": false,
+        "order": 2
+      }
+    ],
+    "tags": ["smartphone", "apple", "tecnología"],
+    "isActive": true,
+    "createdAt": "2026-01-15T10:00:00Z"
+  },
+  {
+    "id": "2",
+    "name": "Samsung Galaxy S24 Ultra",
+    "slug": "samsung-galaxy-s24-ultra",
+    "description": "Smartphone premium con S Pen, cámara de 200MP y pantalla Dynamic AMOLED 2X de 6.8 pulgadas.",
+    "price": 21999,
+    "stock": 20,
+    "sku": "SAM-S24U-256",
+    "categoryId": "1",
+    "images": [
+      {
+        "id": "1",
+        "url": "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=600",
+        "alt": "Samsung Galaxy S24 Ultra",
+        "isPrimary": true,
+        "order": 1
+      }
+    ],
+    "tags": ["smartphone", "samsung", "tecnología"],
+    "isActive": true,
+    "createdAt": "2026-01-20T10:00:00Z"
+  },
+  {
+    "id": "3",
+    "name": "MacBook Pro 14\" M3 Pro",
+    "slug": "macbook-pro-14-m3-pro",
+    "description": "Portátil profesional con chip M3 Pro, 18GB de RAM y 512GB SSD. Pantalla Liquid Retina XDR de 14 pulgadas.",
+    "price": 35999,
+    "discountPrice": 33999,
+    "stock": 8,
+    "sku": "MBP14-M3P-512",
+    "categoryId": "1",
+    "images": [
+      {
+        "id": "1",
+        "url": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=600",
+        "alt": "MacBook Pro 14 pulgadas",
+        "isPrimary": true,
+        "order": 1
+      }
+    ],
+    "tags": ["laptop", "apple", "computadora"],
+    "isActive": true,
+    "createdAt": "2026-02-01T10:00:00Z"
+  },
+  {
+    "id": "4",
+    "name": "Camiseta Básica Algodón",
+    "slug": "camiseta-basica-algodon",
+    "description": "Camiseta de algodón 100%, disponible en varios colores. Tallas del S al XXL.",
+    "price": 299,
+    "stock": 150,
+    "sku": "ROP-CAM-001",
+    "categoryId": "2",
+    "images": [
+      {
+        "id": "1",
+        "url": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600",
+        "alt": "Camiseta blanca básica",
+        "isPrimary": true,
+        "order": 1
+      }
+    ],
+    "tags": ["básica", "algodón", "unisex"],
+    "isActive": true,
+    "createdAt": "2026-01-10T10:00:00Z"
+  },
+  {
+    "id": "5",
+    "name": "Jeans Slim Fit",
+    "slug": "jeans-slim-fit",
+    "description": "Jeans de mezclilla con corte slim fit. Cómodos y modernos para el día a día.",
+    "price": 899,
+    "discountPrice": 799,
+    "stock": 45,
+    "sku": "ROP-JNS-001",
+    "categoryId": "2",
+    "images": [
+      {
+        "id": "1",
+        "url": "https://images.unsplash.com/photo-1542272604-787c3835535d?w=600",
+        "alt": "Jeans slim fit azul",
+        "isPrimary": true,
+        "order": 1
+      }
+    ],
+    "tags": ["jeans", "slim", "mezclilla"],
+    "isActive": true,
+    "createdAt": "2026-01-12T10:00:00Z"
+  },
+  {
+    "id": "6",
+    "name": "Lámpara de Escritorio LED",
+    "slug": "lampara-escritorio-led",
+    "description": "Lámpara LED moderna con 3 niveles de intensidad y puerto USB para carga. Ideal para oficina o estudio.",
+    "price": 599,
+    "stock": 30,
+    "sku": "HOG-LMP-001",
+    "categoryId": "3",
+    "images": [
+      {
+        "id": "1",
+        "url": "https://images.unsplash.com/photo-1507473885765-e6ed057ab6fe?w=600",
+        "alt": "Lámpara LED escritorio",
+        "isPrimary": true,
+        "order": 1
+      }
+    ],
+    "tags": ["lámpara", "LED", "escritorio"],
+    "isActive": true,
+    "createdAt": "2026-02-05T10:00:00Z"
+  },
+  {
+    "id": "7",
+    "name": "Set de Sartenes Antiadherentes",
+    "slug": "set-sartenes-antiadherentes",
+    "description": "Set de 3 sartenes antiadherentes de diferentes tamaños. Apto para lavavajillas.",
+    "price": 1299,
+    "discountPrice": 1099,
+    "stock": 25,
+    "sku": "HOG-SRT-001",
+    "categoryId": "3",
+    "images": [
+      {
+        "id": "1",
+        "url": "https://images.unsplash.com/photo-1556909114-44e3e70034e2?w=600",
+        "alt": "Set de sartenes",
+        "isPrimary": true,
+        "order": 1
+      }
+    ],
+    "tags": ["sartenes", "cocina", "antiadherente"],
+    "isActive": true,
+    "createdAt": "2026-02-10T10:00:00Z"
+  },
+  {
+    "id": "8",
+    "name": "Balón de Fútbol Profesional",
+    "slug": "balon-futbol-profesional",
+    "description": "Balón de fútbol tamaño oficial, material sintético de alta calidad. Apto para césped artificial y natural.",
+    "price": 499,
+    "stock": 60,
+    "sku": "DEP-BAL-001",
+    "categoryId": "4",
+    "images": [
+      {
+        "id": "1",
+        "url": "https://images.unsplash.com/photo-1614632537423-1e6c2e7e0aab?w=600",
+        "alt": "Balón de fútbol",
+        "isPrimary": true,
+        "order": 1
+      }
+    ],
+    "tags": ["fútbol", "balón", "deporte"],
+    "isActive": true,
+    "createdAt": "2026-01-25T10:00:00Z"
+  },
+  {
+    "id": "9",
+    "name": "Mancuernas Ajustables",
+    "slug": "mancuernas-ajustables",
+    "description": "Par de mancuernas ajustables de 2 a 20 kg. Ideales para entrenamiento en casa.",
+    "price": 1899,
+    "stock": 18,
+    "sku": "DEP-MNC-001",
+    "categoryId": "4",
+    "images": [
+      {
+        "id": "1",
+        "url": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600",
+        "alt": "Mancuernas ajustables",
+        "isPrimary": true,
+        "order": 1
+      }
+    ],
+    "tags": ["mancuernas", "gimnasio", "fuerza"],
+    "isActive": true,
+    "createdAt": "2026-02-15T10:00:00Z"
+  },
+  {
+    "id": "10",
+    "name": "El Arte de la Guerra",
+    "slug": "el-arte-de-la-guerra",
+    "description": "Clásico de Sun Tzu sobre estrategia y táctica militar. Edición en español con notas y comentarios.",
+    "price": 199,
+    "stock": 100,
+    "sku": "LIB-ADG-001",
+    "categoryId": "5",
+    "images": [
+      {
+        "id": "1",
+        "url": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=600",
+        "alt": "El Arte de la Guerra",
+        "isPrimary": true,
+        "order": 1
+      }
+    ],
+    "tags": ["libro", "estrategia", "clásico"],
+    "isActive": true,
+    "createdAt": "2026-01-05T10:00:00Z"
+  },
+  {
+    "id": "11",
+    "name": "Crema Hidratante Facial",
+    "slug": "crema-hidratante-facial",
+    "description": "Crema hidratante con ácido hialurónico y vitamina C. Para todo tipo de piel. 50ml.",
+    "price": 449,
+    "discountPrice": 399,
+    "stock": 40,
+    "sku": "BEL-CRF-001",
+    "categoryId": "6",
+    "images": [
+      {
+        "id": "1",
+        "url": "https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=600",
+        "alt": "Crema hidratante facial",
+        "isPrimary": true,
+        "order": 1
+      }
+    ],
+    "tags": ["crema", "hidratante", "cuidado facial"],
+    "isActive": true,
+    "createdAt": "2026-02-20T10:00:00Z"
+  },
+  {
+    "id": "12",
+    "name": "Kit de Maquillaje Profesional",
+    "slug": "kit-maquillaje-profesional",
+    "description": "Kit completo con 24 piezas: brochas, esponjas, y estuche. Ideal para principiantes y profesionales.",
+    "price": 899,
+    "stock": 35,
+    "sku": "BEL-KMAQ-001",
+    "categoryId": "6",
+    "images": [
+      {
+        "id": "1",
+        "url": "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600",
+        "alt": "Kit de maquillaje",
+        "isPrimary": true,
+        "order": 1
+      }
+    ],
+    "tags": ["maquillaje", "kit", "belleza"],
+    "isActive": true,
+    "createdAt": "2026-02-25T10:00:00Z"
+  }
+]

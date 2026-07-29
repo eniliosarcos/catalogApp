@@ -1,0 +1,11 @@
+:host {
+  display: block;
+}
+
+.category-header {
+  @apply mb-8;
+}
+
+.empty-state {
+  @apply text-center py-16;
+}

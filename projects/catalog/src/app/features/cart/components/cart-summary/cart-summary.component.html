@@ -1,0 +1,61 @@
+<div class="bg-white rounded-lg shadow-md p-6 sticky top-24">
+  <h2 class="text-xl font-bold text-gray-800 mb-4">Resumen del pedido</h2>
+  
+  <!-- Cart Code -->
+  <div class="cart-code bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+    <p class="text-sm text-blue-800 mb-1">Tu código de carrito:</p>
+    <p class="text-2xl font-bold text-blue-600">{{ cart.code }}</p>
+    <p class="text-xs text-blue-600 mt-2">Usa este código al contactarnos</p>
+  </div>
+
+  <!-- Summary -->
+  <div class="summary space-y-3 mb-6">
+    <div class="flex justify-between text-gray-600">
+      <span>Productos ({{ getTotalItems() }})</span>
+      <span>{{ getSubtotal() | currency }}</span>
+    </div>
+    <div class="flex justify-between text-gray-600">
+      <span>Envío</span>
+      <span class="text-green-600">Gratis</span>
+    </div>
+    <div class="border-t border-gray-200 pt-3 flex justify-between text-gray-800 font-bold text-lg">
+      <span>Total</span>
+      <span>{{ getSubtotal() | currency }}</span>
+    </div>
+  </div>
+
+  <!-- Contact Options -->
+  <div class="contact-options space-y-3">
+    <p class="text-sm text-gray-600 text-center mb-3">Contacta para finalizar tu compra:</p>
+    
+    <a href="https://wa.me/521234567890?text=Hola! Mi código de carrito es: {{ cart.code }}" 
+       target="_blank"
+       class="block w-full bg-green-500 text-white text-center py-3 rounded-lg font-semibold hover:bg-green-600 transition-colors">
+      📱 WhatsApp
+    </a>
+    
+    <a href="https://instagram.com/catalogo" 
+       target="_blank"
+       class="block w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white text-center py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity">
+      📸 Instagram
+    </a>
+    
+    <a href="https://t.me/catalogo" 
+       target="_blank"
+       class="block w-full bg-blue-500 text-white text-center py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors">
+      ✈️ Telegram
+    </a>
+  </div>
+
+  <!-- Instructions -->
+  <div class="instructions mt-6 p-4 bg-gray-50 rounded-lg">
+    <h3 class="font-semibold text-gray-800 mb-2">¿Cómo comprar?</h3>
+    <ol class="text-sm text-gray-600 space-y-1">
+      <li>1. Agrega productos al carrito</li>
+      <li>2. Copia tu código de carrito</li>
+      <li>3. Contáctanos por redes sociales</li>
+      <li>4. Envíanos tu código</li>
+      <li>5. Confirmamos tu pedido</li>
+    </ol>
+  </div>
+</div>

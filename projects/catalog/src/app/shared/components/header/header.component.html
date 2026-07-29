@@ -1,0 +1,29 @@
+<header class="bg-white shadow-md sticky top-0 z-50">
+  <div class="container mx-auto px-4">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <a routerLink="/" class="flex items-center gap-2">
+        <span class="text-2xl">🛍️</span>
+        <span class="text-xl font-bold text-gray-800">Catálogo</span>
+      </a>
+
+      <!-- Navigation -->
+      <nav class="hidden md:flex items-center gap-6">
+        <a routerLink="/" routerLinkActive="text-blue-600" [routerLinkActiveOptions]="{exact: true}"
+           class="text-gray-600 hover:text-blue-600 transition-colors">
+          Inicio
+        </a>
+      </nav>
+
+      <!-- Cart -->
+      <a routerLink="/cart" class="relative flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-colors">
+        <span class="text-2xl">🛒</span>
+        @if (cart && cart.items.length > 0) {
+          <span class="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
+            {{ cart.items.length }}
+          </span>
+        }
+      </a>
+    </div>
+  </div>
+</header>
