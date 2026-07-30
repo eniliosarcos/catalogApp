@@ -3,10 +3,17 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "start": "yarn start:catalog",
+    "start:catalog": "ng serve catalog --port 4200",
+    "start:admin": "ng serve admin --port 4201",
+    "build": "yarn build:catalog && yarn build:admin",
+    "build:catalog": "ng build catalog",
+    "build:admin": "ng build admin",
+    "build:prod": "ng build catalog -c production && ng build admin -c production",
+    "test": "ng test catalog",
+    "test:catalog": "ng test catalog",
+    "test:admin": "ng test admin",
+    "test:watch": "ng test catalog --watch"
   },
   "private": true,
   "dependencies": {
