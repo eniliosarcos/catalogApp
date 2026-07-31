@@ -50,7 +50,7 @@ jobs:
             fs.writeFileSync('projects/catalog/src/environments/environment.prod.ts', content);
 
       - name: Build catalog
-        run: npx ng build catalog --configuration production
+        run: npx ng build catalog --configuration production --base-href /catalogApp/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
