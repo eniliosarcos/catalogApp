@@ -23,6 +23,30 @@ Informational product catalog with admin panel built with Angular 19 monorepo.
 - Group related changes into meaningful commits
 - One feature/fix = one commit (not one commit per file)
 
+### Environment Policy (CRITICAL)
+- **NEVER commit `src/environments/environment.ts` or `environment.prod.ts`**
+- These files contain real contact data (phone, social handles)
+- They are in `.gitignore` — keep them that way
+- If you need to add new env vars, add to both dev and prod files locally
+
+### Pre-flight Checklist (EVERY task)
+- [ ] Read relevant model/service files FIRST
+- [ ] Make changes
+- [ ] `ng build catalog` succeeds
+- [ ] `ng build admin` succeeds
+- [ ] Save to Engram after significant decisions or fixes
+
+### Component Creation Checklist
+1. [ ] Model in `projects/shared/src/lib/models/`
+2. [ ] Mock data in `projects/catalog/src/assets/data/`
+3. [ ] Service in `projects/shared/src/lib/services/` (abstract)
+4. [ ] Service impl in `projects/catalog/src/app/core/services/`
+5. [ ] Component with HTML + SCSS separation
+6. [ ] SCSS starts with `@reference "tailwindcss"`
+7. [ ] Route in `app.routes.ts`
+8. [ ] Export in `public-api.ts` (if shared)
+9. [ ] Build both apps
+
 ### Code Style
 - Use standalone components (no NgModules)
 - Use signals for reactive state
@@ -30,16 +54,14 @@ Informational product catalog with admin panel built with Angular 19 monorepo.
 - Prefer `inject()` over constructor injection
 - Use `@shared/` path alias for shared library
 
-### Component Structure
-```typescript
-@Component({
-  selector: 'app-[name]',
-  standalone: true,
-  imports: [CommonModule, ...],
-  template: `...`
-})
-export class NameComponent {}
-```
+### Brand Colors
+- Cherry: `#8B2252`
+- Gold: `#C9A96E`
+- Pink: `#D4739D`
+- Pink Light: `#E8A0BF`
+- Background: `#F5E6E0`
+- Text: `#3D2B1F`
+- Text Light: `#6B5744`
 
 ### File Naming
 - Components: `[name].component.ts`
@@ -51,6 +73,7 @@ export class NameComponent {}
 - Use `@shared/models/...` for shared models
 - Use `@shared/services/...` for shared services
 - Use `@shared/ui/...` for shared UI components
+- Use `@env` for environment config
 
 ### Tailwind CSS v4
 - SCSS files using `@apply` MUST start with `@reference "tailwindcss"`
@@ -155,3 +178,4 @@ ng serve admin
 - Mock data in `projects/catalog/src/assets/data/`
 - Admin is shell only - full implementation comes later
 - Backend will be Node.js + MongoDB (not yet implemented)
+- Environment files contain real data — NEVER commit them
