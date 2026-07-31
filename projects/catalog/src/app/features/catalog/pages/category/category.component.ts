@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { Category } from '@shared/models/category.model';
 import { Product } from '@shared/models/product.model';
+import { BreadcrumbItem } from '@shared/models/breadcrumb.model';
 import { CategoryService } from '@shared/services/category.service';
 import { ProductService } from '@shared/services/product.service';
 import { ProductGridComponent } from '../../components/product-grid/product-grid.component';
@@ -20,7 +21,7 @@ export class CategoryComponent implements OnInit {
   category: Category | null = null;
   products: Product[] = [];
   loading = true;
-  breadcrumbItems = [
+  breadcrumbItems: BreadcrumbItem[] = [
     { label: 'Inicio', link: '/' },
     { label: 'Categoría', link: '' }
   ];

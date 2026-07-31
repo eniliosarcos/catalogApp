@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { Product } from '@shared/models/product.model';
+import { BreadcrumbItem } from '@shared/models/breadcrumb.model';
 import { ProductService } from '@shared/services/product.service';
 import { CartService } from '@shared/services/cart.service';
 import { ProductGalleryComponent } from '../../components/product-gallery/product-gallery.component';
@@ -21,7 +22,7 @@ export class ProductDetailComponent implements OnInit {
   loading = true;
   quantity = 1;
   addedToCart = false;
-  breadcrumbItems = [
+  breadcrumbItems: BreadcrumbItem[] = [
     { label: 'Inicio', link: '/' },
     { label: 'Producto', link: '' }
   ];

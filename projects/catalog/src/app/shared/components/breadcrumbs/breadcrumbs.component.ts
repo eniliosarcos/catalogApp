@@ -1,11 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-
-export interface BreadcrumbItem {
-  label: string;
-  link: string;
-}
+import { BreadcrumbItem } from '@shared/models/breadcrumb.model';
 
 @Component({
   selector: 'app-breadcrumbs',

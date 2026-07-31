@@ -1,4 +1,6 @@
-export const environment = {
+import { Environment } from '@shared/models/environment.model';
+
+export const environment: Environment = {
   production: false,
   contact: {
     whatsapp: '+521234567890',

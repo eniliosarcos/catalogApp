@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CartItem } from '@shared/models/cart.model';
+import { CartItem, CartItemQuantity } from '@shared/models/cart.model';
 
 @Component({
   selector: 'app-cart-item',
@@ -12,7 +12,7 @@ import { CartItem } from '@shared/models/cart.model';
 export class CartItemComponent {
   @Input({ required: true }) item!: CartItem;
   @Output() remove = new EventEmitter<string>();
-  @Output() updateQuantity = new EventEmitter<{ productId: string; quantity: number }>();
+  @Output() updateQuantity = new EventEmitter<CartItemQuantity>();
 
   increaseQuantity(): void {
     this.updateQuantity.emit({ productId: this.item.productId, quantity: this.item.quantity + 1 });

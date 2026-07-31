@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { LoadingSize } from '@shared/models/ui.model';
 
 @Component({
   selector: 'shared-loading',
@@ -9,7 +10,7 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./loading.component.scss']
 })
 export class LoadingComponent {
-  @Input() size: 'sm' | 'md' | 'lg' = 'md';
+  @Input() size: LoadingSize = 'md';
   @Input() message?: string;
   @Input() containerClass = 'py-8';
 

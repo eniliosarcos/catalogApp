@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { Cart } from '@shared/models/cart.model';
+import { BreadcrumbItem } from '@shared/models/breadcrumb.model';
 import { CartService } from '@shared/services/cart.service';
 import { CartItemComponent } from '../../components/cart-item/cart-item.component';
 import { CartSummaryComponent } from '../../components/cart-summary/cart-summary.component';
@@ -18,7 +19,7 @@ import { LoadingComponent } from '@shared/ui/components/loading/loading.componen
 export class CartViewComponent implements OnInit {
   cart: Cart | null = null;
   loading = true;
-  breadcrumbItems = [
+  breadcrumbItems: BreadcrumbItem[] = [
     { label: 'Inicio', link: '/' },
     { label: 'Carrito', link: '' }
   ];
