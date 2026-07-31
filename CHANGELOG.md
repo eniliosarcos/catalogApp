@@ -34,6 +34,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Architecture
 - Added ADR-007: Environment configuration pattern
 - Added ADR-008: Cart stores full Product object
+- Added ADR-009: Order Management System
 
 ## [0.1.0] - 2026-07-29
 
