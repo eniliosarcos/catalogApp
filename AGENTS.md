@@ -34,6 +34,8 @@ Informational product catalog with admin panel built with Angular 19 monorepo.
 - [ ] Make changes
 - [ ] `ng build catalog` succeeds
 - [ ] `ng build admin` succeeds
+- [ ] Update CHANGELOG.md if significant change
+- [ ] Create ADR if architectural decision made
 - [ ] Save to Engram after significant decisions or fixes
 
 ### Component Creation Checklist
