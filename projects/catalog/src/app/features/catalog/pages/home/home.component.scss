@@ -6,9 +6,7 @@
 
 .hero-section {
   position: relative;
-  min-height: 180px;
-  transition: transform 0.2s ease-out, opacity 0.2s ease-out;
-  transform-origin: center top;
+  height: 180px;
 }
 
 .hero-bg {

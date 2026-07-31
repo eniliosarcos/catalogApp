@@ -17,13 +17,13 @@
     }
   </div>
   <div class="p-5">
-    <h3 class="font-semibold text-lg text-[#3D2B1F] mb-2 line-clamp-2">{{ product.name }}</h3>
+    <h3 class="font-semibold text-sm md:text-base text-[#3D2B1F] mb-2 line-clamp-2">{{ product.name }}</h3>
     <div class="flex items-center gap-2">
       @if (product.discountPrice) {
-        <span class="text-xl font-bold text-[#8B2252] ">{{ product.discountPrice | currency }}</span>
-        <span class="text-sm text-[#6B5744] line-through ">{{ product.price | currency }}</span>
+        <span class="text-md md:text-lg font-bold text-[#8B2252] ">{{ product.discountPrice | currency }}</span>
+        <span class="text-xs md:text-sm text-[#6B5744] line-through ">{{ product.price | currency }}</span>
       } @else {
-        <span class="text-xl font-bold text-[#C9A96E] ">{{ product.price | currency }}</span>
+        <span class="text-md md:text-lg font-bold text-[#C9A96E] ">{{ product.price | currency }}</span>
       }
     </div>
     @if (product.stock <= 5 && product.stock > 0) {

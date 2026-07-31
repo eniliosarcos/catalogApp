@@ -7,3 +7,13 @@
 .category-card {
   @apply bg-white rounded-xl shadow-md overflow-hidden border border-[#C9A96E]/20 hover:shadow-xl hover:shadow-[#C9A96E]/20 transition-all duration-300 transform hover:-translate-y-1;
 }
+
+.category-card .aspect-video {
+  aspect-ratio: 16/9;
+}
+
+@media (max-width: 640px) {
+  .category-card .aspect-video {
+    aspect-ratio: 4/3;
+  }
+}

@@ -8,6 +8,15 @@
   --font-heading: 'DM Serif Display', Georgia, serif;
   --font-body: 'DM Sans', sans-serif;
 
+  /* Escala tipográfica — Fluid con clamp() */
+  --text-xs: clamp(0.7rem, 0.65rem + 0.2vw, 0.8125rem);
+  --text-sm: clamp(0.8125rem, 0.75rem + 0.25vw, 0.875rem);
+  --text-base: 1rem;
+  --text-md: clamp(0.9375rem, 0.85rem + 0.35vw, 1.125rem);
+  --text-lg: clamp(1.0625rem, 0.95rem + 0.45vw, 1.3125rem);
+  --text-xl: clamp(1.25rem, 1rem + 0.9vw, 1.5rem);
+  --text-2xl: clamp(1.5rem, 1.1rem + 1.2vw, 1.875rem);
+
   /* COLORES */
   --color-bg: #F5E6E0;
   --color-gold: #C9A96E;
@@ -25,6 +34,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: var(--font-body);
+  font-size: var(--text-base);
 }
 
 h1, h2, h3, h4, h5, h6 {
