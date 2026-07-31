@@ -1,9 +1,9 @@
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
   @for (category of categories; track category.id) {
-    <a [routerLink]="['/category', category.slug]" 
+    <a [routerLink]="['/category', category.slug]"
        class="category-card group bg-white rounded-2xl shadow-md overflow-hidden border border-[#C9A96E]/20 hover:shadow-xl hover:shadow-[#C9A96E]/30 transition-all duration-300 transform hover:-translate-y-2">
-      <div class="aspect-video bg-[#F5E6E0] relative overflow-hidden">
-        <img [src]="category.imageUrl" 
+      <div class="aspect-[3/2] bg-[#F5E6E0] relative overflow-hidden">
+        <img [src]="category.imageUrl"
              [alt]="category.name"
              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
         <div class="absolute inset-0 bg-gradient-to-t from-[#8B2252]/30 to-transparent group-hover:from-[#8B2252]/40 transition-colors"></div>
