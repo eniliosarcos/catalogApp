@@ -1,6 +1,6 @@
 <div class="bg-white rounded-lg shadow-md p-6 sticky top-24">
   <h2 class="text-xl font-bold text-gray-800 mb-4">Resumen del pedido</h2>
-  
+
   <!-- Cart Code -->
   <div class="cart-code bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
     <p class="text-sm text-blue-800 mb-1">Tu código de carrito:</p>
@@ -27,20 +27,20 @@
   <!-- Contact Options -->
   <div class="contact-options space-y-3">
     <p class="text-sm text-gray-600 text-center mb-3">Contacta para finalizar tu compra:</p>
-    
-    <a href="https://wa.me/521234567890?text=Hola! Mi código de carrito es: {{ cart.code }}" 
+
+    <a [href]="'https://wa.me/' + contact.whatsapp + '?text=Hola! Mi código de carrito es: ' + cart.code"
        target="_blank"
        class="block w-full bg-green-500 text-white text-center py-3 rounded-lg font-semibold hover:bg-green-600 transition-colors">
       📱 WhatsApp
     </a>
-    
-    <a href="https://instagram.com/catalogo" 
+
+    <a [href]="'https://instagram.com/' + contact.instagram.replace('@', '')"
        target="_blank"
        class="block w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white text-center py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity">
       📸 Instagram
     </a>
-    
-    <a href="https://t.me/catalogo" 
+
+    <a [href]="'https://t.me/' + contact.telegram.replace('@', '')"
        target="_blank"
        class="block w-full bg-blue-500 text-white text-center py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors">
       ✈️ Telegram

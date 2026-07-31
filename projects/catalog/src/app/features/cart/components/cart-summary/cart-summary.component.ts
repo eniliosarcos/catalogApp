@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Cart } from '@shared/models/cart.model';
+import { environment } from '@env';
 
 @Component({
   selector: 'app-cart-summary',
@@ -11,6 +12,7 @@ import { Cart } from '@shared/models/cart.model';
 })
 export class CartSummaryComponent {
   @Input({ required: true }) cart!: Cart;
+  contact = environment.contact;
 
   getTotalItems(): number {
     return this.cart.items.reduce((total, item) => total + item.quantity, 0);

@@ -20,6 +20,9 @@
       ],
       "@shared/*": [
         "./projects/shared/src/lib/*"
+      ],
+      "@env": [
+        "./projects/catalog/src/environments/environment"
       ]
     },
     "importHelpers": true,
