@@ -5,16 +5,16 @@
            [style.transform]="'scale(' + (1 - scrollProgress() * 0.05) + ')'">
     <div class="hero-bg absolute inset-0"></div>
     <div class="relative z-10 container mx-auto px-4 text-center py-10">
-      <h1 class="text-3xl md:text-4xl font-[Playfair_Display] font-bold text-[#8B2252] mb-2 tracking-wide">
+      <h1 class="text-3xl md:text-4xl font-bold text-[#8B2252] mb-2 tracking-wide">
         L'Essence de Cerise
       </h1>
-      <p class="text-base md:text-lg text-[#6B5744] mb-4 font-[Cormorant_Garamond] italic">
+      <p class="text-base md:text-lg text-[#6B5744] mb-4 italic">
         Descubre nuestra colección exclusiva
       </p>
       <div class="flex justify-center gap-3 flex-wrap">
-        <span class="bg-[#C9A96E] text-white px-5 py-1.5 rounded-full text-xs font-[Cormorant_Garamond] font-semibold tracking-wider">✓ Envío gratis</span>
-        <span class="bg-[#C9A96E] text-white px-5 py-1.5 rounded-full text-xs font-[Cormorant_Garamond] font-semibold tracking-wider">✓ Garantía</span>
-        <span class="bg-[#C9A96E] text-white px-5 py-1.5 rounded-full text-xs font-[Cormorant_Garamond] font-semibold tracking-wider">✓ Soporte 24/7</span>
+        <span class="bg-[#C9A96E] text-white px-5 py-1.5 rounded-full text-xs font-semibold tracking-wider">✓ Envío gratis</span>
+        <span class="bg-[#C9A96E] text-white px-5 py-1.5 rounded-full text-xs font-semibold tracking-wider">✓ Garantía</span>
+        <span class="bg-[#C9A96E] text-white px-5 py-1.5 rounded-full text-xs font-semibold tracking-wider">✓ Soporte 24/7</span>
       </div>
     </div>
   </section>
@@ -22,7 +22,7 @@
   <!-- Categories Section -->
   <section class="py-16 relative z-20 bg-[#F5E6E0]">
     <div class="container mx-auto px-4">
-      <h2 class="text-4xl font-[Playfair_Display] font-bold text-center mb-12 text-[#8B2252]">Explora nuestras categorías</h2>
+      <h2 class="text-4xl font-bold text-center mb-12 text-[#8B2252]">Explora nuestras categorías</h2>
       
       @if (loading) {
         <shared-loading message="Cargando categorías..."></shared-loading>

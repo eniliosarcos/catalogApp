@@ -1,6 +1,14 @@
 @import "tailwindcss";
 
+/* ========================================
+   DESIGN TOKENS — Cambia fuentes y colores aquí
+   ======================================== */
 :root {
+  /* TIPografÍA */
+  --font-heading: 'DM Serif Display', Georgia, serif;
+  --font-body: 'DM Sans', sans-serif;
+
+  /* COLORES */
   --color-bg: #F5E6E0;
   --color-gold: #C9A96E;
   --color-gold-dark: #B8956A;
@@ -16,9 +24,9 @@ body {
   color: var(--color-text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: var(--font-body);
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font-heading);
 }

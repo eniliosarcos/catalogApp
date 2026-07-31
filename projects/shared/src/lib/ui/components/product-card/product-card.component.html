@@ -11,26 +11,26 @@
       </div>
     }
     @if (product.discountPrice) {
-      <span class="discount-badge absolute top-3 right-3 bg-[#8B2252] text-white px-3 py-1 text-sm font-semibold rounded-full font-[Cormorant_Garamond]">
+      <span class="discount-badge absolute top-3 right-3 bg-[#8B2252] text-white px-3 py-1 text-sm font-semibold rounded-full ">
         -{{ getDiscountPercentage() }}%
       </span>
     }
   </div>
   <div class="p-5">
-    <h3 class="font-[Playfair_Display] font-semibold text-lg text-[#3D2B1F] mb-2 line-clamp-2">{{ product.name }}</h3>
+    <h3 class="font-semibold text-lg text-[#3D2B1F] mb-2 line-clamp-2">{{ product.name }}</h3>
     <div class="flex items-center gap-2">
       @if (product.discountPrice) {
-        <span class="text-xl font-bold text-[#8B2252] font-[Cormorant_Garamond]">{{ product.discountPrice | currency }}</span>
-        <span class="text-sm text-[#6B5744] line-through font-[Cormorant_Garamond]">{{ product.price | currency }}</span>
+        <span class="text-xl font-bold text-[#8B2252] ">{{ product.discountPrice | currency }}</span>
+        <span class="text-sm text-[#6B5744] line-through ">{{ product.price | currency }}</span>
       } @else {
-        <span class="text-xl font-bold text-[#C9A96E] font-[Cormorant_Garamond]">{{ product.price | currency }}</span>
+        <span class="text-xl font-bold text-[#C9A96E] ">{{ product.price | currency }}</span>
       }
     </div>
     @if (product.stock <= 5 && product.stock > 0) {
-      <p class="text-sm text-[#D4739D] mt-2 font-[Cormorant_Garamond]">¡Últimas {{ product.stock }} unidades!</p>
+      <p class="text-sm text-[#D4739D] mt-2 ">¡Últimas {{ product.stock }} unidades!</p>
     }
     @if (product.stock === 0) {
-      <p class="text-sm text-[#8B2252] mt-2 font-[Cormorant_Garamond]">Agotado</p>
+      <p class="text-sm text-[#8B2252] mt-2 ">Agotado</p>
     }
   </div>
 </a>
