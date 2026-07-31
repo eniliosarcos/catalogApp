@@ -95,7 +95,7 @@ describe('ProductDetailComponent', () => {
 
     component.addToCart();
 
-    expect(cartService.addItem).toHaveBeenCalledWith('1', 2);
+    expect(cartService.addItem).toHaveBeenCalledWith(mockProduct, 2);
     expect(component.addedToCart).True;
     done();
   });

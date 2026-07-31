@@ -55,18 +55,16 @@ export class MockCartService {
     return this.cartSubject.asObservable();
   }
 
-  addItem(productId: string, quantity: number = 1): Observable<Cart> {
+  addItem(product: Product, quantity: number = 1): Observable<Cart> {
     const cart = this.cartSubject.value;
-    const existingItem = cart.items.find(item => item.productId === productId);
+    const existingItem = cart.items.find(item => item.productId === product.id);
 
     if (existingItem) {
       existingItem.quantity += quantity;
     } else {
-      // In a real app, we'd fetch the product details
-      // For now, we'll store just the productId
       cart.items.push({
-        productId,
-        product: {} as Product, // Placeholder
+        productId: product.id,
+        product,
         quantity
       });
     }

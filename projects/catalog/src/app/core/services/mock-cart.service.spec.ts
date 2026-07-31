@@ -1,5 +1,14 @@
 import { TestBed } from '@angular/core/testing';
 import { MockCartService } from './mock-cart.service';
+import { Product } from '@shared/models/product.model';
+
+function mockProduct(id: string, name: string, price: number): Product {
+  return {
+    id, name, slug: `slug-${id}`, description: '', price,
+    stock: 10, sku: `SKU-${id}`, categoryId: 'cat-1',
+    images: [], tags: [], isActive: true, createdAt: new Date().toISOString()
+  };
+}
 
 describe('MockCartService', () => {
   let service: MockCartService;
@@ -26,7 +35,7 @@ describe('MockCartService', () => {
 
     it('should generate code with 5 characters after prefix', () => {
       const code = service.generateCode();
-      expect(code.length).toBe(9); // CAR- + 5 chars
+      expect(code.length).toBe(9);
     });
 
     it('should only contain uppercase letters and numbers', () => {
@@ -48,17 +57,20 @@ describe('MockCartService', () => {
 
   describe('addItem', () => {
     it('should add item to cart', (done) => {
-      service.addItem('1', 1).subscribe(cart => {
+      const product = mockProduct('1', 'Test Product', 99.99);
+      service.addItem(product, 1).subscribe(cart => {
         expect(cart.items.length).toBe(1);
         expect(cart.items[0].productId).toBe('1');
+        expect(cart.items[0].product.name).toBe('Test Product');
         expect(cart.items[0].quantity).toBe(1);
         done();
       });
     });
 
     it('should increment quantity if item exists', (done) => {
-      service.addItem('1', 1).subscribe(() => {
-        service.addItem('1', 2).subscribe(cart => {
+      const product = mockProduct('1', 'Test Product', 99.99);
+      service.addItem(product, 1).subscribe(() => {
+        service.addItem(product, 2).subscribe(cart => {
           expect(cart.items.length).toBe(1);
           expect(cart.items[0].quantity).toBe(3);
           done();
@@ -67,11 +79,13 @@ describe('MockCartService', () => {
     });
 
     it('should persist to localStorage', (done) => {
-      service.addItem('1', 1).subscribe(() => {
+      const product = mockProduct('1', 'Test Product', 99.99);
+      service.addItem(product, 1).subscribe(() => {
         const saved = localStorage.getItem('catalog_cart');
         expect(saved).toBeTruthy();
         const parsed = JSON.parse(saved!);
         expect(parsed.items.length).toBe(1);
+        expect(parsed.items[0].product.name).toBe('Test Product');
         done();
       });
     });
@@ -79,7 +93,8 @@ describe('MockCartService', () => {
 
   describe('removeItem', () => {
     it('should remove item from cart', (done) => {
-      service.addItem('1', 1).subscribe(() => {
+      const product = mockProduct('1', 'Test Product', 99.99);
+      service.addItem(product, 1).subscribe(() => {
         service.removeItem('1').subscribe(cart => {
           expect(cart.items.length).toBe(0);
           done();
@@ -90,7 +105,8 @@ describe('MockCartService', () => {
 
   describe('updateQuantity', () => {
     it('should update item quantity', (done) => {
-      service.addItem('1', 1).subscribe(() => {
+      const product = mockProduct('1', 'Test Product', 99.99);
+      service.addItem(product, 1).subscribe(() => {
         service.updateQuantity('1', 5).subscribe(cart => {
           expect(cart.items[0].quantity).toBe(5);
           done();
@@ -99,7 +115,8 @@ describe('MockCartService', () => {
     });
 
     it('should remove item if quantity is 0', (done) => {
-      service.addItem('1', 1).subscribe(() => {
+      const product = mockProduct('1', 'Test Product', 99.99);
+      service.addItem(product, 1).subscribe(() => {
         service.updateQuantity('1', 0).subscribe(cart => {
           expect(cart.items.length).toBe(0);
           done();
@@ -110,8 +127,10 @@ describe('MockCartService', () => {
 
   describe('clearCart', () => {
     it('should clear all items', (done) => {
-      service.addItem('1', 1).subscribe(() => {
-        service.addItem('2', 2).subscribe(() => {
+      const p1 = mockProduct('1', 'Product 1', 50);
+      const p2 = mockProduct('2', 'Product 2', 75);
+      service.addItem(p1, 1).subscribe(() => {
+        service.addItem(p2, 2).subscribe(() => {
           service.clearCart().subscribe(cart => {
             expect(cart.items.length).toBe(0);
             done();

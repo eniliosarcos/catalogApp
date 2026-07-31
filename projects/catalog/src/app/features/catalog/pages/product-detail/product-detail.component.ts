@@ -65,7 +65,7 @@ export class ProductDetailComponent implements OnInit {
 
   addToCart(): void {
     if (this.product && this.quantity > 0) {
-      this.cartService.addItem(this.product.id, this.quantity).subscribe({
+      this.cartService.addItem(this.product, this.quantity).subscribe({
         next: () => {
           this.addedToCart = true;
           setTimeout(() => this.addedToCart = false, 3000);

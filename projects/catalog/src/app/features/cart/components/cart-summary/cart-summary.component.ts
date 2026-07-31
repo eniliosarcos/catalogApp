@@ -17,8 +17,9 @@ export class CartSummaryComponent {
   }
 
   getSubtotal(): number {
-    // In a real app, we'd calculate based on product prices
-    // For now, return 0 since we don't have product details in cart items
-    return 0;
+    return this.cart.items.reduce((total, item) => {
+      const price = item.product?.discountPrice ?? item.product?.price ?? 0;
+      return total + (price * item.quantity);
+    }, 0);
   }
 }

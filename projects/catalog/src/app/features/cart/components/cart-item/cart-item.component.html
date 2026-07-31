@@ -1,30 +1,35 @@
 <div class="bg-white rounded-lg shadow-md p-4 flex gap-4">
-  <!-- Product Image Placeholder -->
-  <div class="w-24 h-24 bg-gray-200 rounded-lg flex-shrink-0 flex items-center justify-center">
-    <span class="text-3xl">📦</span>
+  <!-- Product Image -->
+  <div class="w-24 h-24 bg-[#F5E6E0] rounded-lg flex-shrink-0 overflow-hidden">
+    @if (item.product.images.length) {
+      <img [src]="item.product.images[0].url" [alt]="item.product.images[0].alt || item.product.name" class="w-full h-full object-cover">
+    } @else {
+      <div class="w-full h-full flex items-center justify-center">
+        <span class="text-3xl">📦</span>
+      </div>
+    }
   </div>
 
   <!-- Product Info -->
   <div class="flex-1 min-w-0">
-    <h3 class="font-semibold text-gray-800 truncate">Producto ID: {{ item.productId }}</h3>
-    <p class="text-gray-600 text-sm">SKU: N/A</p>
-    
+    <h3 class="font-semibold text-gray-800 truncate">{{ item.product.name }}</h3>
+
     <div class="flex items-center gap-4 mt-2">
       <!-- Quantity Controls -->
       <div class="flex items-center border border-gray-300 rounded-lg">
-        <button (click)="decreaseQuantity()" 
+        <button (click)="decreaseQuantity()"
                 class="px-3 py-1 text-gray-600 hover:bg-gray-100 transition-colors">
           -
         </button>
         <span class="px-3 py-1 border-x border-gray-300">{{ item.quantity }}</span>
-        <button (click)="increaseQuantity()" 
+        <button (click)="increaseQuantity()"
                 class="px-3 py-1 text-gray-600 hover:bg-gray-100 transition-colors">
           +
         </button>
       </div>
 
       <!-- Remove Button -->
-      <button (click)="onRemove()" 
+      <button (click)="onRemove()"
               class="text-red-500 hover:text-red-700 transition-colors text-sm">
         Eliminar
       </button>
@@ -33,7 +38,12 @@
 
   <!-- Price -->
   <div class="text-right">
-    <p class="text-lg font-bold text-gray-800">$0.00</p>
-    <p class="text-sm text-gray-500">$0.00 c/u</p>
+    @if (item.product.discountPrice) {
+      <p class="text-lg font-bold text-[#8B2252]">{{ item.product.discountPrice | currency }}</p>
+      <p class="text-sm text-gray-500 line-through">{{ item.product.price | currency }}</p>
+    } @else {
+      <p class="text-lg font-bold text-[#C9A96E]">{{ item.product.price | currency }}</p>
+      <p class="text-sm text-gray-500">{{ item.product.price | currency }} c/u</p>
+    }
   </div>
 </div>
