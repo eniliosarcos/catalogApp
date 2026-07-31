@@ -56,6 +56,46 @@ Informational product catalog with admin panel built with Angular 19 monorepo.
 - Prefer `inject()` over constructor injection
 - Use `@shared/` path alias for shared library
 
+### Branch Naming
+Formato: `type/description` (lowercase, sin espacios, solo `a-z0-9._-`)
+
+| Tipo | Cuándo usar | Ejemplo |
+|------|-------------|---------|
+| feat | Nueva funcionalidad | `feat/cart-checkout` |
+| fix | Bug fix | `fix/header-responsive` |
+| chore | Mantenimiento, deps, CI | `chore/update-deps` |
+| docs | Documentación | `docs/readme-setup` |
+| refactor | Reestructurar sin cambiar funcionalidad | `refactor/extract-service` |
+| style | Formato, CSS, sin cambio lógico | `style/fix-tailwind-classes` |
+| test | Agregar/modificar tests | `test/cart-service` |
+
+Crear branch: `git checkout -b feat/nombre-feature main`
+
+### Commit Messages (Conventional Commits)
+Formato: `type(scope): description`
+
+| Tipo | Uso | Ejemplo |
+|------|-----|---------|
+| feat | Nueva funcionalidad | `feat(cart): add quantity selector` |
+| fix | Bug fix | `fix(header): mobile padding` |
+| chore | Mantenimiento | `chore: update angular cli` |
+| docs | Documentación | `docs: update changelog` |
+| refactor | Reestructurar sin cambiar funcionalidad | `refactor(service): extract mock data` |
+| style | Cambios de formato/CSS | `style: fix tailwind classes` |
+| test | Agregar/modificar tests | `test(cart): add localStorage tests` |
+
+- Scope es opcional: `feat: add cart` o `feat(cart): add quantity selector`
+- Un commit = una unidad de trabajo completa
+- Tests van en el mismo commit que la funcionalidad
+
+### Git Workflow (Branch Protection)
+1. Crear branch: `git checkout -b feat/nombre-feature main`
+2. Trabajar con commits descriptivos
+3. Push: `git push origin feat/nombre-feature`
+4. Crear PR en GitHub
+5. Self-review (o pedir review)
+6. Squash merge a `main` → deploy automático a GitHub Pages
+
 ### Brand Colors
 - Cherry: `#8B2252`
 - Gold: `#C9A96E`
