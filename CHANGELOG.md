@@ -25,6 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Component tests for cart-view and product-detail
 - ErrorState model for typed error handling
 - ErrorDisplayComponent for consistent error UI
+- Hero scroll animation: subtle scale, fade, and translate on scroll (0-100px range)
 
 ### Fixed
 - Tailwind CSS v4 utilities not generating in Angular 19
@@ -43,7 +44,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Error handling patterns
   - Accessibility (a11y) rules
   - Performance guidelines
+  - **Commit policy: always ask user before committing**
 - Enabled test generation in angular.json schematics
+- Renamed project to LCeriseApp
+- Updated index.html titles to "L'Essence de Cerise"
+
+### Design
+- L'Essence de Cerise branding redesign
+  - Brand color palette: gold (#C9A96E), cherry (#8B2252), pink (#D4739D)
+  - Header with LC monogram and fixed positioning
+  - Hero section with pink/cherry gradient
+  - Category cards with gold borders and cherry hover
+  - Product cards with gold prices and cherry discounts
+  - Footer with cherry background
+- Typography improvements
+  - Google Fonts: Playfair Display (headings) + Cormorant Garamond (body)
+  - Improved hero contrast with cherry title on pink gradient
+  - Refined card typography with larger spacing
 
 ### Architecture Decisions
 - ADR-001: Angular 19 as framework

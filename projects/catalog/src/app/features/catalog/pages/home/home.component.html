@@ -1,19 +1,26 @@
 <div class="min-h-screen">
   <!-- Hero Section -->
-  <section class="bg-gradient-to-br from-[#F5E6E0] via-[#EDBFC9] to-[#D4739D] py-24">
-    <div class="container mx-auto px-4 text-center">
-      <h1 class="text-5xl md:text-7xl font-[Playfair_Display] font-bold text-[#8B2252] mb-4 tracking-wide">L'Essence de Cerise</h1>
-      <p class="text-xl md:text-2xl text-[#6B5744] mb-10 font-[Cormorant_Garamond] italic">Descubre nuestra colección exclusiva</p>
-      <div class="flex justify-center gap-4 flex-wrap">
-        <span class="bg-[#C9A96E] text-white px-8 py-3 rounded-full text-sm font-[Cormorant_Garamond] font-semibold tracking-wider">✓ Envío gratis</span>
-        <span class="bg-[#C9A96E] text-white px-8 py-3 rounded-full text-sm font-[Cormorant_Garamond] font-semibold tracking-wider">✓ Garantía</span>
-        <span class="bg-[#C9A96E] text-white px-8 py-3 rounded-full text-sm font-[Cormorant_Garamond] font-semibold tracking-wider">✓ Soporte 24/7</span>
+  <section class="hero-section relative overflow-hidden"
+           [style.opacity]="1 - scrollProgress()"
+           [style.transform]="'scale(' + (1 - scrollProgress() * 0.05) + ')'">
+    <div class="hero-bg absolute inset-0"></div>
+    <div class="relative z-10 container mx-auto px-4 text-center py-10">
+      <h1 class="text-3xl md:text-4xl font-[Playfair_Display] font-bold text-[#8B2252] mb-2 tracking-wide">
+        L'Essence de Cerise
+      </h1>
+      <p class="text-base md:text-lg text-[#6B5744] mb-4 font-[Cormorant_Garamond] italic">
+        Descubre nuestra colección exclusiva
+      </p>
+      <div class="flex justify-center gap-3 flex-wrap">
+        <span class="bg-[#C9A96E] text-white px-5 py-1.5 rounded-full text-xs font-[Cormorant_Garamond] font-semibold tracking-wider">✓ Envío gratis</span>
+        <span class="bg-[#C9A96E] text-white px-5 py-1.5 rounded-full text-xs font-[Cormorant_Garamond] font-semibold tracking-wider">✓ Garantía</span>
+        <span class="bg-[#C9A96E] text-white px-5 py-1.5 rounded-full text-xs font-[Cormorant_Garamond] font-semibold tracking-wider">✓ Soporte 24/7</span>
       </div>
     </div>
   </section>
 
   <!-- Categories Section -->
-  <section class="py-16">
+  <section class="py-16 relative z-20 bg-[#F5E6E0]">
     <div class="container mx-auto px-4">
       <h2 class="text-4xl font-[Playfair_Display] font-bold text-center mb-12 text-[#8B2252]">Explora nuestras categorías</h2>
       

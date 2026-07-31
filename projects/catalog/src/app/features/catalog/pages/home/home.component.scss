@@ -4,10 +4,13 @@
   display: block;
 }
 
-.hero {
-  @apply bg-gradient-to-r from-[#F5E6E0] via-[#E8A0BF] to-[#D4739D] py-20;
+.hero-section {
+  position: relative;
+  min-height: 180px;
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+  transform-origin: center top;
 }
 
-.hero-badge {
-  @apply bg-[#C9A96E] text-white px-6 py-2 rounded-full text-sm font-serif;
+.hero-bg {
+  background: linear-gradient(135deg, #F5E6E0 0%, #EDBFC9 50%, #D4739D 100%);
 }

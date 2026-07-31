@@ -16,6 +16,13 @@ Informational product catalog with admin panel built with Angular 19 monorepo.
 
 ## Development Rules
 
+### Commit Policy (CRITICAL)
+- **NEVER commit without explicit user approval**
+- Always ask: "¿Commiteamos estos cambios?" before running `git commit`
+- User decides when changes are ready to commit
+- Group related changes into meaningful commits
+- One feature/fix = one commit (not one commit per file)
+
 ### Code Style
 - Use standalone components (no NgModules)
 - Use signals for reactive state
