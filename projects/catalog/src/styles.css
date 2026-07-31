@@ -7,8 +7,8 @@
   --color-cherry: #8B2252;
   --color-pink: #D4739D;
   --color-pink-light: #E8A0BF;
-  --color-text: #4A3728;
-  --color-text-light: #7A6558;
+  --color-text: #3D2B1F;
+  --color-text-light: #6B5744;
 }
 
 body {
@@ -16,9 +16,9 @@ body {
   color: var(--color-text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: 'Georgia', 'Times New Roman', serif;
+  font-family: 'Cormorant Garamond', Georgia, serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Georgia', 'Times New Roman', serif;
+  font-family: 'Playfair Display', Georgia, serif;
 }
