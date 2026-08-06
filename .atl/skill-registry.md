@@ -6,6 +6,7 @@ Last updated: 2026-07-31
 
 ## Sources scanned
 
+- skills
 - C:\Users\Enilio\.config\opencode\skills
 - C:\Users\Enilio\.gemini\skills
 - C:\Users\Enilio\.copilot\skills
@@ -21,7 +22,8 @@ Last updated: 2026-07-31
 | Skill | Trigger / description | Scope | Path |
 | --- | --- | --- | --- |
 | `branch-pr` | Create Gentle AI pull requests with issue-first checks. Trigger: creating, opening, or preparing PRs for review. | user | `C:\Users\Enilio\.config\opencode\skills\branch-pr\SKILL.md` |
-| `catalog-component` | Trigger: crear componente, nueva feature, agregar componente, new component. Create full catalog component following project conventions. | user | `C:\Users\Enilio\.config\opencode\skills\catalog-component\SKILL.md` |
+| `catalog-component` | Trigger: crear componente, nueva feature, agregar componente, new component. Create full catalog component following project conventions. | project | `F:\Proyectos ANGULAR-NODEJS-REACT-.NET\Varios\catalogApp\skills\catalog-component\SKILL.md` |
+| `catalog-no-env-leak` | — | project | `F:\Proyectos ANGULAR-NODEJS-REACT-.NET\Varios\catalogApp\skills\catalog-no-env-leak\SKILL.md` |
 | `chained-pr` | Trigger: PRs over 400 lines, stacked PRs, review slices. Split oversized changes into chained PRs that protect review focus. | user | `C:\Users\Enilio\.config\opencode\skills\chained-pr\SKILL.md` |
 | `cognitive-doc-design` | Design docs that reduce cognitive load. Trigger: writing guides, READMEs, RFCs, onboarding, architecture, or review-facing docs. | user | `C:\Users\Enilio\.config\opencode\skills\cognitive-doc-design\SKILL.md` |
 | `comment-writer` | Write warm, direct collaboration comments. Trigger: PR feedback, issue replies, reviews, Slack messages, or GitHub comments. | user | `C:\Users\Enilio\.config\opencode\skills\comment-writer\SKILL.md` |
