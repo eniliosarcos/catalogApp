@@ -22,6 +22,7 @@ Informational product catalog with admin panel built with Angular 19 monorepo.
 - User decides when changes are ready to commit
 - Group related changes into meaningful commits
 - One feature/fix = one commit (not one commit per file)
+- **ALWAYS update CHANGELOG.md before committing** — load `changelog-discipline` skill for rules
 
 ### Environment Policy (CRITICAL)
 - **NEVER commit `src/environments/environment.ts` or `environment.prod.ts`**
