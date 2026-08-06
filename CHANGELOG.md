@@ -27,6 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - GitHub Actions workflow for automatic deployment to GitHub Pages
 - `catalog-no-env-leak` skill to prevent leaking real contact data
 - Environment variables injected via GitHub Secrets at build time
+- Admin panel deployed to GitHub Pages at `/catalogApp/admin/`
 
 ### Fixed
 - Cart now stores full `Product` object instead of `{} as Product` placeholder

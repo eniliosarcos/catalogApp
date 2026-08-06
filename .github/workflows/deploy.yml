@@ -52,6 +52,12 @@ jobs:
       - name: Build catalog
         run: npx ng build catalog --configuration production --base-href /catalogApp/
 
+      - name: Build admin
+        run: npx ng build admin --configuration production --base-href /catalogApp/admin/
+
+      - name: Copy admin build into catalog dist
+        run: cp -r dist/admin/browser dist/catalog/browser/admin
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
