@@ -34,6 +34,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Cart-item component displays real product name, image, and price
 - Cart-summary calculates subtotal from actual product prices (`discountPrice ?? price`)
 - `addItem` signature changed from `productId: string` to `product: Product`
+- Admin blank page on GitHub Pages: added root redirect to `/admin` route
 
 ### Changed
 - Footer uses ContactService instead of direct `@env` import
