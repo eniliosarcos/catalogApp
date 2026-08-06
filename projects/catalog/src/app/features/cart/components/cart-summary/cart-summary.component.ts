@@ -1,7 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Cart } from '@shared/models/cart.model';
-import { environment } from '@env';
+import { ContactConfig } from '@shared/models/environment.model';
+import { ContactService } from '@shared/services/contact.service';
 
 @Component({
   selector: 'app-cart-summary',
@@ -10,9 +11,18 @@ import { environment } from '@env';
   templateUrl: './cart-summary.component.html',
   styleUrls: ['./cart-summary.component.scss']
 })
-export class CartSummaryComponent {
+export class CartSummaryComponent implements OnInit {
   @Input({ required: true }) cart!: Cart;
-  contact = environment.contact;
+
+  private contactService = inject(ContactService);
+
+  contact: ContactConfig | null = null;
+
+  ngOnInit(): void {
+    this.contactService.getContact().subscribe(config => {
+      this.contact = config;
+    });
+  }
 
   getTotalItems(): number {
     return this.cart.items.reduce((total, item) => total + item.quantity, 0);

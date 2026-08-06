@@ -25,27 +25,29 @@
   </div>
 
   <!-- Contact Options -->
-  <div class="contact-options space-y-3">
-    <p class="text-sm text-gray-600 text-center mb-3">Contacta para finalizar tu compra:</p>
+  @if (contact) {
+    <div class="contact-options space-y-3">
+      <p class="text-sm text-gray-600 text-center mb-3">Contacta para finalizar tu compra:</p>
 
-    <a [href]="'https://wa.me/' + contact.whatsapp + '?text=Hola! Mi código de carrito es: ' + cart.code"
-       target="_blank"
-       class="block w-full bg-green-500 text-white text-center py-3 rounded-lg font-semibold hover:bg-green-600 transition-colors">
-      📱 WhatsApp
-    </a>
+      <a [href]="'https://wa.me/' + contact.whatsapp + '?text=Hola! Mi código de carrito es: ' + cart.code"
+         target="_blank"
+         class="block w-full bg-green-500 text-white text-center py-3 rounded-lg font-semibold hover:bg-green-600 transition-colors">
+        📱 WhatsApp
+      </a>
 
-    <a [href]="'https://instagram.com/' + contact.instagram.replace('@', '')"
-       target="_blank"
-       class="block w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white text-center py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity">
-      📸 Instagram
-    </a>
+      <a [href]="'https://instagram.com/' + contact.instagram.replace('@', '')"
+         target="_blank"
+         class="block w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white text-center py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity">
+        📸 Instagram
+      </a>
 
-    <a [href]="'https://t.me/' + contact.telegram.replace('@', '')"
-       target="_blank"
-       class="block w-full bg-blue-500 text-white text-center py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors">
-      ✈️ Telegram
-    </a>
-  </div>
+      <a [href]="'https://t.me/' + contact.telegram.replace('@', '')"
+         target="_blank"
+         class="block w-full bg-blue-500 text-white text-center py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors">
+        ✈️ Telegram
+      </a>
+    </div>
+  }
 
   <!-- Instructions -->
   <div class="instructions mt-6 p-4 bg-gray-50 rounded-lg">
