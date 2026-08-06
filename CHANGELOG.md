@@ -8,6 +8,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Admin authentication system: login page, mock JWT, localStorage persistence
+- Auth guard (CanMatchFn) for protected admin routes
+- Admin Settings page for editing contact data (WhatsApp, Instagram, Telegram)
+- ContactService abstraction in shared library
+- MockContactService with hybrid pattern: environment defaults + localStorage override
+- MockProductService and MockCategoryService for admin panel
+- Lucide icons in admin sidebar (LayoutDashboard, Package, FolderOpen, Settings, LogOut)
+- Logout button in admin sidebar
+- Admin routes prefixed with `/admin` (`/admin`, `/admin/products`, `/admin/categories`, `/admin/settings`)
+- `@if` null safety guards in footer and cart-summary templates
 - Centralized environment config (`environment.ts` / `environment.prod.ts`) with contact data
 - `@env` path alias in tsconfig.json
 - Environment policy: files in `.gitignore`, never committed
@@ -25,6 +35,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `addItem` signature changed from `productId: string` to `product: Product`
 
 ### Changed
+- Footer uses ContactService instead of direct `@env` import
+- Cart-summary uses ContactService instead of direct `@env` import
+- Deploy workflow restores secrets injection step for environment.prod.ts
+- Environment files restored with hybrid contact config pattern
 - Typography: DM Serif Display (headings) + DM Sans (body) via CSS variables
 - Fluid typography scale with `clamp()` in styles.css (`--text-xs` to `--text-2xl`)
 - Header responsive: `h-12` mobile / `h-14` desktop, smaller fonts and icons
@@ -35,6 +49,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Removed `@HostListener` scroll from HomeComponent
 
 ### Architecture
+- Contact data flows: environment.prod.ts (secrets) → MockContactService → localStorage override
+- Admin can edit contact data; changes persist in browser localStorage
+- Pre-backend phase: localStorage override only affects the browser where edit was made
+- Added ADR-010: Hybrid contact configuration pattern
 - Added ADR-007: Environment configuration pattern
 - Added ADR-008: Cart stores full Product object
 - Added ADR-009: Order Management System
