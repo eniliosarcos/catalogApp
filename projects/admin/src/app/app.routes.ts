@@ -8,14 +8,14 @@ import { LoginComponent } from './features/auth/pages/login/login.component';
 import { authGuard } from './core/guards/auth.guard';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'admin', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   {
-    path: 'admin',
+    path: '',
     component: AdminLayoutComponent,
     canMatch: [authGuard],
     children: [
-      { path: '', component: DashboardComponent },
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      { path: 'dashboard', component: DashboardComponent },
       { path: 'products', component: ProductsComponent },
       { path: 'categories', component: CategoriesComponent },
       { path: 'settings', component: SettingsComponent },
